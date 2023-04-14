@@ -6,6 +6,7 @@ BONUS
 
 
 using System;
+using System.ComponentModel.Design;
 using System.Runtime.Serialization.Formatters;
 
 Console.WriteLine("Quanti cibi preferiti hai?");
@@ -39,7 +40,6 @@ void classificaCibiPreferiti(string[] array)
     for (int i = 0; i < array.Length; i++)
     {
         Console.WriteLine((i + 1) + ") " + array[i]);
-        Console.WriteLine("");
     }
 
 }
@@ -48,7 +48,19 @@ void classificaCibiPreferiti(string[] array)
 
 void posizioneMediana(string[] array)
 {
+    Console.WriteLine("");
     Console.WriteLine("Cibo preferito: " + array[0]);
     Console.WriteLine("Cibo sfavorito: " + array[array.Length - 1]);
-    Console.WriteLine("Posizione mediana: " + array[array.Length / 2]);
+
+    
+    if (array.Length % 2 == 0)
+    {
+        Console.WriteLine("Posizione mediana: " + array[(array.Length / 2) - 1] + ", " + array[array.Length / 2]);
+    }
+    else
+    {
+        Console.WriteLine("Posizione mediana: " + array[array.Length / 2]);
+    }
+
+       
 }
